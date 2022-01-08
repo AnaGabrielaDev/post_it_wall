@@ -3,8 +3,8 @@
 
 <style>
     body {
-        color: black
-    } 
+        background-color: grey;
+} 
 </style>
 
 @if (session('message'))
@@ -27,3 +27,6 @@
         </a>
     </p>
 @endforeach
+
+<hr>
+{{$posts->links()}}
