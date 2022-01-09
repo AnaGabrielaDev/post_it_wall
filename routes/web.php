@@ -25,3 +25,4 @@ Route::get('/post/{id}', [PostController::class, 'show'])->name('post.show');
 Route::delete('/post/{id}', [PostController::class, 'destroy'])->name('post.destroy');
 Route::get('/post/edit/{id}', [PostController::class, 'edit'])->name('post.edit');
 Route::put('/post/{id}', [PostController::class, 'update'])->name('post.update');
+Route::any('/post/search', [PostController::class, 'search'])->name('post.search');

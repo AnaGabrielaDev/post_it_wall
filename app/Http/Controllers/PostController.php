@@ -27,21 +27,21 @@ class PostController extends Controller
 
     public function show ($id)
     {
-        // $post = Post::where('id', $id)->first();
-        $post = Post::find($id);
+        // $posts = Post::where('id', $id)->first();
+        $posts = Post::find($id);
         
-        if(!$post) {
+        if(!$posts) {
             return redirect()->route('post.index');
         }
 
-        return view('admin.posts.show', compact('post'));
+        return view('admin.posts.show', compact('posts'));
     }
 
     public function destroy ($id) {
-        if (!$post = Post::find($id))
+        if (!$posts = Post::find($id))
             return redirect()->route('post.index');
 
-        $post->delete();
+        $posts->delete();
 
         return redirect()
             ->route('post.index')
@@ -49,22 +49,32 @@ class PostController extends Controller
     }
 
     public function edit ($id) {
-        $post = Post::find($id);
+        $posts = Post::find($id);
 
-        if (!$post)
+        if (!$posts)
             return redirect()->back();
 
-        return view('admin.posts.edit', compact('post'));
+        return view('admin.posts.edit', compact('posts'));
     }
 
     public function update (StoreUpdatePost $request, $id) {
-        $post = Post::find($id);
+        $posts = Post::find($id);
 
-        if (!$post) 
+        if (!$posts) 
             return redirect()->back();
 
-        $post->update($request->all());
+        $posts->update($request->all());
 
-        return redirect()->route('post.index')->with('message', 'Post editado com sucesso');
+        return redirect()
+            ->route('post.index')
+            ->with('message', 'Post editado com sucesso');
+    }
+
+    public function search (Request $request) {
+        $posts = Post::where('title', 'LIKE', $request->search)
+                    ->orderBy('title', 'ASC')
+                    ->paginate();
+        
+        return view('admin.posts.index', compact('posts'));
     }
 }
