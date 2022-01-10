@@ -71,7 +71,7 @@ class PostController extends Controller
     }
 
     public function search (Request $request) {
-        $posts = Post::where('title', 'LIKE', $request->search)
+        $posts = Post::where('title', 'like', '%'.$request->search.'%')
                     ->orderBy('title', 'ASC')
                     ->paginate();
         
