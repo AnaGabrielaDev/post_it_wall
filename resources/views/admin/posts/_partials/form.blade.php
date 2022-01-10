@@ -1,4 +1,3 @@
-
 @if ($errors->any())
 <ul>
    @foreach ($errors->all() as $error)
@@ -11,5 +10,5 @@
 
 @csrf
 <input type="text" name="title" id="title" placeholder="Titulo" value="{{ $posts->title ??old('title')}}">
-<textarea name="content" id="content" cols="30" rows="4" placeholder="Conteudo">{{$posts->content ?? old('content')}}</textarea>
+<textarea name="content" id="content" cols="30" rows="4" placeholder="Conteudo">{{$posts->content  ?? old('content')}}</textarea>
 <button type="submit">Enviar</button>

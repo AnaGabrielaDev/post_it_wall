@@ -1,5 +1,14 @@
-<h1>Cadastrar Novo Post</h1>
+@extends('layout.all')
+@section('titlePage')
+    criar
+@endsection
 
-<form action="{{ route('post.store') }}" method="post">
-    @include('admin.posts._partials.form')
-</form>
+@section('subtitle')
+    Cadastrar Novo Post
+@endsection
+
+@section('content')
+    <form action="{{ route('post.store') }}" method="post">
+        @include('admin.posts._partials.form')
+    </form>
+@endsection
