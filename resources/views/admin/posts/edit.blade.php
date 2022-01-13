@@ -8,7 +8,7 @@ Editar o post {{ $posts->title }}
 @endsection
 
 @section('content')
-<form>
+<form action= "{{route:'post.update', $posts->id}} method="post" enctype="multipart/form-data">
     @method('put')
     @include('admin.posts._partials.form')
 </form>    
