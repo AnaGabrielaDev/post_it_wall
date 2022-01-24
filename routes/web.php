@@ -26,3 +26,9 @@ Route::delete('/post/{id}', [PostController::class, 'destroy'])->name('post.dest
 Route::get('/post/edit/{id}', [PostController::class, 'edit'])->name('post.edit');
 Route::put('/post/{id}', [PostController::class, 'update'])->name('post.update');
 Route::any('/post/search', [PostController::class, 'search'])->name('post.search');
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__ . '/auth.php';
