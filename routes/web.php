@@ -26,9 +26,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/post/edit/{id}', [PostController::class, 'edit'])->name('post.edit');
     Route::put('/post/{id}', [PostController::class, 'update'])->name('post.update');
     Route::any('/post/search', [PostController::class, 'search'])->name('post.search');
+    Route::get('/post', [PostController::class, 'index'])->name('post.index');
 });
 
-Route::get('/post', [PostController::class, 'index'])->name('post.index');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
