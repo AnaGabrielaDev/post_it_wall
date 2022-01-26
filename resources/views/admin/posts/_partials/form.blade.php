@@ -9,7 +9,7 @@
 @endif
 
 @csrf
-<div class="flex">
+<div class="flex flex-col items-center justify-center">
     <input 
         type="text" 
         name="title" 
@@ -31,13 +31,17 @@
     <input 
         type="file" 
         name="image" 
-        id="image" 
-        class="w-64 h-14 text-sm file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:bg-pink-100 file:text-black hover:file:bg-grey-100"
+        id="image"
+        class="w-64 p-2 text-sm file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:bg-pink-100 file:text-black hover:file:bg-grey-100"
     >
 </div>
-<button 
-    type="submit" 
-    class="w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none"
->
-    Enviar
-</button>
+
+<p>
+    <button 
+        type="submit" 
+        class="w-full py-3 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none text-center"
+    >
+        Enviar
+    </button>
+    
+</p>

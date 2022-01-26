@@ -12,8 +12,6 @@
     a {
         text-decoration-line: none;
     }
-    .subtitle {
-    } 
 </style>
 
 
@@ -53,7 +51,7 @@
                 </form>
             </x-slot>
         </x-dropdown>
-        <h1 class="font-bold text-4xl">
+        <h1 class="font-bold text-4xl m-auto">
             <a href="{{Route('post.index')}}">
                 Posts
             </a>
